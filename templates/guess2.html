@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Wördli</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='bootstrap/css/bootstrap.min.css') }}">
+
+</head>
+<body>
+
+<header class="d-flex justify-content-center py-3">
+      <ul class="nav nav-pills">
+        <li class="nav-item"><a href="#" class="nav-link active" aria-current="page">Home</a></li>
+        <li class="nav-item"><a href="#" class="nav-link">Word of the Day</a></li>
+        <li class="nav-item"><a href="#" class="nav-link">Wordlist</a></li>
+      </ul>
+</header>
+
+<!--<form action="General" method="POST">
+    <input type="text" name="Letter_1" maxlength="1" required>
+    <input type="text" name="Letter_2" maxlength="1" required>
+    <input type="text" name="Letter_3" maxlength="1" required>
+    <input type="text" name="Letter_4" maxlength="1" required>
+    <input type="text" name="Letter_5" maxlength="1" required>
+    <input type="submit" value="Submit">-->
+
+
+
+   <form action="einwort" method = "POST">
+       <input type = "text" name="guessed_word" maxlength="5">
+       <button type="submit">Submit</button>
+   </form>
+</form>
+
+{{% erratenes_worthtml %}}
+
+</body>
+</html>

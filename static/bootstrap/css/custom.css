@@ -1,0 +1,35 @@
+#h1: {
+    color: white;
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: bold;
+    text-align: center;
+}
+
+
+.bildformation {
+    position: relative;
+    margin: 10pt;
+}
+
+.bildformation span {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    line-height: 6em;
+    text-align: center;
+    font-size: xx-large;
+    color: white;
+    text-transform: capitalize;
+}
+
+
+.bildformation img {
+    display: block;
+}
+
+
+h2.versuch {
+  text-align: center;
+}
+
