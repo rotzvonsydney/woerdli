@@ -1,8 +1,9 @@
 from flask import Flask
 from flask import render_template
 from flask import request
+from flask import flash
 from flask import url_for
-
+from word_processing import word
 
 app = Flask(__name__)
 
@@ -29,12 +30,19 @@ def ausfuehren():
         counter_halbrichtig = 0
         counter_falsch = 0
 
+        #Hier wird das Wort, welches der User eingeben hat, ins Python geholt.
         erratenes_wort = request.form['guessed_word']
+        """
+        if len(erratenes_wort) <= 5:
+            flash('Sie mönd es wort mit 5 Buechstabe itöggele, susch funktionierts auä nöd.')
+            return render_template('index.html')
+        """
         erratenes_wort = str(erratenes_wort)
+        randomword = str(word)
         wordx = "ficke"
 
         wortliste = list(erratenes_wort)
-        wordliste = list(wordx)
+        wordliste = list(randomword)
 
         letter1 = wortliste[0]
         letter2 = wortliste[1]
@@ -42,23 +50,23 @@ def ausfuehren():
         letter4 = wortliste[3]
         letter5 = wortliste[4]
 
-        if wortliste[0] in wordliste:
+        if wortliste[0] in wordliste and not wortliste[0]== wordliste[0]:
             farbe1 = "yellow.jpg"
             colordiv1 = "yellow"
             counter_halbrichtig = counter_halbrichtig + 1
-        if wortliste[1] in wordliste:
+        if wortliste[1] in wordliste and not wortliste[1]== wordliste[1]:
             farbe2 = "yellow.jpg"
             colordiv2 = "yellow"
             counter_halbrichtig = counter_halbrichtig + 1
-        if wortliste[2] in wordliste:
+        if wortliste[2] in wordliste and not wortliste[2]== wordliste[2]:
             farbe3 = "yellow.jpg"
             colordiv3 = "yellow"
             counter_halbrichtig = counter_halbrichtig + 1
-        if wortliste[3] in wordliste:
+        if wortliste[3] in wordliste and not wortliste[3]== wordliste[3]:
             farbe4 = "yellow.jpg"
             colordiv4 = "yellow"
             counter_halbrichtig = counter_halbrichtig + 1
-        if wortliste[4] in wordliste:
+        if wortliste[4] in wordliste and not wortliste[4]== wordliste[4]:
             farbe5 = "yellow.jpg"
             colordiv5 = "yellow"
             counter_halbrichtig = counter_halbrichtig + 1
@@ -83,6 +91,7 @@ def ausfuehren():
             farbe5 = "green.jpg"
             colordiv5 = "green"
             counter_richtig = counter_richtig + 1
+
         #Hier wird jeder Buchstabe kontrolliert, welche nicht stimmen und die Farbe ausgegeben
         if wortliste[0] not in wordliste:
             farbe1 = "grey.jpg"
@@ -112,6 +121,7 @@ def ausfuehren():
             return render_template("victory.html", counter=counter)
 
 
+
         return render_template("index.html",
                                erratenes_worthtml=erratenes_wort,
                                color_1=farbe1, color_2=farbe2, color_3=farbe3, color_4=farbe4, color_5=farbe5,
@@ -130,17 +140,8 @@ def ausfuehren():
 def statistik():
     hallo = 5
 
+
+
+
 if __name__ == "__main__":
     app.run(debug=True, port=5000)
-
-"""
-dict erstellen mit beiden worten
-if element1 == element 2:
-    buchstabe1 = grün
-if element 2 == element2:
-    buchstabe3 = grün
-...
-liste = [
-danach dict richtig, halbricht falsch
-for 
-"""
