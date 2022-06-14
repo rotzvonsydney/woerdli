@@ -2,11 +2,15 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href={{url_for('static', filename='bootstrap/css/custom.css') }}>
+
     <title>Sie haben gewonnen!</title>
 </head>
 <body>
 
-<h2 class="versuch">Sie haben mit {{ counter }} gewonnen!</h2>
+<h2 class="versuch">Sie haben {{ counter }} Versuche gebraucht!!</h2>
+
+<p>{{ letterstatistics }}</p>
 
 </body>
 </html>

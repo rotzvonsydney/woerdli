@@ -1,7 +1,5 @@
 import random
-from flask import Flask, render_template, request, url_for, flash, redirect
 
-from main import app
 
 
 def get_word():
@@ -11,4 +9,3 @@ def get_word():
     return word
 
 word = get_word()
-
